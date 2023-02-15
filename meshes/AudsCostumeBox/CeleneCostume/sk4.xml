@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="description.xsd">
+
+    <bone name="NPC Spine [Spn0]"/>
+    <bone name="NPC Spine1 [Spn1]"/>
+    <bone name="NPC Pelvis [Pelv]"/>
+    <bone name="NPC L Butt"/>
+    <bone name="NPC R Butt"/>
+    <bone name="NPC L Thigh [LThg]"/>
+    <bone name="NPC R Thigh [RThg]"/>
+
+    <bone name="NPC R Breast"/>
+    <bone name="NPC L Breast"/>
+    <bone name="NPC R Clavicle [RClv]"/>
+    <bone name="NPC R UpperArm [RUar]"/>
+    <bone name="NPC R Forearm [RLar]"/>
+    <bone name="NPC R Hand [RHnd]"/>
+    <bone name="NPC R ForearmTwist1 [RLt1]"/>
+    <bone name="NPC R ForearmTwist2 [RLt2]"/>
+    <bone name="NPC R UpperarmTwist1 [RUt1]"/>
+    <bone name="NPC R UpperarmTwist2 [RUt2]"/>
+    <bone name="NPC L Clavicle [LClv]"/>
+    <bone name="NPC L UpperArm [LUar]"/>
+    <bone name="NPC L Forearm [LLar]"/>
+    <bone name="NPC L Hand [LHnd]"/>
+    <bone name="NPC L ForearmTwist1 [LLt1]"/>
+    <bone name="NPC L ForearmTwist2 [LLt2]"/>
+    <bone name="NPC L UpperarmTwist1 [LUt1]"/>
+    <bone name="NPC L UpperarmTwist2 [LUt2]"/>
+
+    <bone name="VGSKIRTROOT"/>
+
+    <bone name="VSK_A1"/>
+    <bone name="VSK_B1"/>
+    <bone name="VSK_C1"/>
+    <bone name="VSK_D1"/>
+    <bone name="VSK_E1"/>
+    <bone name="VSK_F1"/>
+    <bone name="VSK_G1"/>
+    <bone name="VSK_H1"/>
+
+    <per-triangle-shape name="bodycollide">
+        <margin>0.1</margin>
+        <shared>private</shared>
+        <prenetration>0.01</prenetration>
+        <tag>bdy</tag>
+        <no-collide-with-tag>bdy</no-collide-with-tag>
+        <no-collide-with-tag>hand</no-collide-with-tag>
+        <no-collide-with-tag>body</no-collide-with-tag>
+		<no-collide-with-tag>Labia</no-collide-with-tag>
+		<no-collide-with-tag>Genitals</no-collide-with-tag>
+		<no-collide-with-tag>MaleBody</no-collide-with-tag>
+		<no-collide-with-tag>Lbreast</no-collide-with-tag>
+		<no-collide-with-tag>Rbreast</no-collide-with-tag>
+		<no-collide-with-tag>Belly</no-collide-with-tag>
+
+        <no-collide-with-tag>FemaleBody</no-collide-with-tag>
+        <no-collide-with-tag>MaleBody</no-collide-with-tag>
+        <no-collide-with-tag>Malehands</no-collide-with-tag>
+        <no-collide-with-tag>Hands</no-collide-with-tag>
+        <no-collide-with-tag>FemaleHands</no-collide-with-tag>
+
+    </per-triangle-shape>
+
+    <bone-default>
+        <mass>1.5</mass>
+        <inertia x="25" y="25" z="25"/>
+        <centerOfMassTransform>
+            <basis x="0" y="0" z="0" w="1"/>
+            <origin x="0" y="0" z="0"/>
+        </centerOfMassTransform>
+        <linearDamping>0.9</linearDamping>
+        <angularDamping>0.9</angularDamping>
+        <friction>0.5</friction>
+        <rollingFriction>0.5</rollingFriction>
+        <restitution>0.1</restitution>
+        <margin-multiplier>1</margin-multiplier>
+    </bone-default>
+
+    <bone name="VSK_A2"/>
+    <bone name="VSK_A3"/>
+    <bone name="VSK_A4"/>
+    <bone name="VSK_A5"/>
+    <bone name="VSK_A6"/>
+    <bone name="VSK_B2"/>
+    <bone name="VSK_B3"/>
+    <bone name="VSK_B4"/>
+    <bone name="VSK_B5"/>
+    <bone name="VSK_B6"/>
+    <bone name="VSK_C2"/>
+    <bone name="VSK_C3"/>
+    <bone name="VSK_C4"/>
+    <bone name="VSK_C5"/>
+    <bone name="VSK_C6"/>
+    <bone name="VSK_D2"/>
+    <bone name="VSK_D3"/>
+    <bone name="VSK_D4"/>
+    <bone name="VSK_D5"/>
+    <bone name="VSK_D6"/>
+    <bone name="VSK_E2"/>
+    <bone name="VSK_E3"/>
+    <bone name="VSK_E4"/>
+    <bone name="VSK_E5"/>
+    <bone name="VSK_E6"/>
+    <bone name="VSK_F2"/>
+    <bone name="VSK_F3"/>
+    <bone name="VSK_F4"/>
+    <bone name="VSK_F5"/>
+    <bone name="VSK_F6"/>
+    <bone name="VSK_G2"/>
+    <bone name="VSK_G3"/>
+    <bone name="VSK_G4"/>
+    <bone name="VSK_G5"/>
+    <bone name="VSK_G6"/>
+    <bone name="VSK_H2"/>
+    <bone name="VSK_H3"/>
+    <bone name="VSK_H4"/>
+    <bone name="VSK_H5"/>
+    <bone name="VSK_H6"/>
+
+
+    <generic-constraint-default>
+        <frameInB>
+            <basis x="0" y="0" z="0" w="1"/>
+            <origin x="0" y="0" z="0"/>
+        </frameInB>
+        <useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+        <linearLowerLimit x="0" y="-0.1" z="0"/>
+        <linearUpperLimit x="0" y="0.1" z="0"/>
+        <angularLowerLimit x="-0.02" y="-0.1" z="-0.001"/>
+        <angularUpperLimit x=".5" y="0.1" z="0.001"/>
+        <linearStiffness x="0" y="0" z="0"/>
+        <angularStiffness x="0" y="10" z="0"/>
+        <linearDamping x="0" y="0" z="0"/>
+        <angularDamping x="0" y="0" z="0"/>
+        <linearEquilibrium x="0" y="0" z="0"/>
+        <angularEquilibrium x="0" y="0" z="0"/>
+    </generic-constraint-default>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_A2" bodyB="VSK_A1"></generic-constraint>
+        <generic-constraint bodyA="VSK_A3" bodyB="VSK_A2"></generic-constraint>
+        <generic-constraint bodyA="VSK_A4" bodyB="VSK_A3"></generic-constraint>
+        <generic-constraint bodyA="VSK_A5" bodyB="VSK_A4"></generic-constraint>
+        <generic-constraint bodyA="VSK_A6" bodyB="VSK_A5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_B2" bodyB="VSK_B1"></generic-constraint>
+        <generic-constraint bodyA="VSK_B3" bodyB="VSK_B2"></generic-constraint>
+        <generic-constraint bodyA="VSK_B4" bodyB="VSK_B3"></generic-constraint>
+        <generic-constraint bodyA="VSK_B5" bodyB="VSK_B4"></generic-constraint>
+        <generic-constraint bodyA="VSK_B6" bodyB="VSK_B5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_C2" bodyB="VSK_C1"></generic-constraint>
+        <generic-constraint bodyA="VSK_C3" bodyB="VSK_C2"></generic-constraint>
+        <generic-constraint bodyA="VSK_C4" bodyB="VSK_C3"></generic-constraint>
+        <generic-constraint bodyA="VSK_C5" bodyB="VSK_C4"></generic-constraint>
+        <generic-constraint bodyA="VSK_C6" bodyB="VSK_C5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_D2" bodyB="VSK_D1"></generic-constraint>
+        <generic-constraint bodyA="VSK_D3" bodyB="VSK_D2"></generic-constraint>
+        <generic-constraint bodyA="VSK_D4" bodyB="VSK_D3"></generic-constraint>
+        <generic-constraint bodyA="VSK_D5" bodyB="VSK_D4"></generic-constraint>
+        <generic-constraint bodyA="VSK_D6" bodyB="VSK_D5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_E2" bodyB="VSK_E1">
+            <angularLowerLimit x="-0.001" y="-0.1" z="-0.001"/>
+            <angularUpperLimit x=".001" y="0.1" z="0.001"/>
+        </generic-constraint>
+        <generic-constraint bodyA="VSK_E3" bodyB="VSK_E2"></generic-constraint>
+        <generic-constraint bodyA="VSK_E4" bodyB="VSK_E3"></generic-constraint>
+        <generic-constraint bodyA="VSK_E5" bodyB="VSK_E4"></generic-constraint>
+        <generic-constraint bodyA="VSK_E6" bodyB="VSK_E5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_F2" bodyB="VSK_F1">
+            <angularLowerLimit x="-0.001" y="-0.1" z="-0.001"/>
+            <angularUpperLimit x=".001" y="0.1" z="0.001"/>
+        </generic-constraint>
+        <generic-constraint bodyA="VSK_F3" bodyB="VSK_F2"></generic-constraint>
+        <generic-constraint bodyA="VSK_F4" bodyB="VSK_F3"></generic-constraint>
+        <generic-constraint bodyA="VSK_F5" bodyB="VSK_F4"></generic-constraint>
+        <generic-constraint bodyA="VSK_F6" bodyB="VSK_F5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_G2" bodyB="VSK_G1"></generic-constraint>
+        <generic-constraint bodyA="VSK_G3" bodyB="VSK_G2"></generic-constraint>
+        <generic-constraint bodyA="VSK_G4" bodyB="VSK_G3"></generic-constraint>
+        <generic-constraint bodyA="VSK_G5" bodyB="VSK_G4"></generic-constraint>
+        <generic-constraint bodyA="VSK_G6" bodyB="VSK_G5"></generic-constraint>
+    </constraint-group>
+
+    <constraint-group>
+        <generic-constraint bodyA="VSK_H2" bodyB="VSK_H1"></generic-constraint>
+        <generic-constraint bodyA="VSK_H3" bodyB="VSK_H2"></generic-constraint>
+        <generic-constraint bodyA="VSK_H4" bodyB="VSK_H3"></generic-constraint>
+        <generic-constraint bodyA="VSK_H5" bodyB="VSK_H4"></generic-constraint>
+        <generic-constraint bodyA="VSK_H6" bodyB="VSK_H5"></generic-constraint>
+    </constraint-group>
+
+
+    <per-vertex-shape name="skcollision">
+        <tag>skirt</tag>
+
+        <shared>private</shared>
+
+        <no-collide-with-tag>skirt</no-collide-with-tag>
+        <no-collide-with-tag>hair</no-collide-with-tag>
+        <no-collide-with-tag>hands</no-collide-with-tag>
+        <no-collide-with-tag>Labia</no-collide-with-tag>
+        <no-collide-with-tag>Genitals</no-collide-with-tag>
+        <no-collide-with-tag>FemaleBody</no-collide-with-tag>
+        <no-collide-with-tag>MaleBody</no-collide-with-tag>
+        <no-collide-with-tag>Malehands</no-collide-with-tag>
+        <no-collide-with-tag>Hands</no-collide-with-tag>
+        <no-collide-with-tag>FemaleHands</no-collide-with-tag>
+        <no-collide-with-tag>Lbreast</no-collide-with-tag>
+        <no-collide-with-tag>Rbreast</no-collide-with-tag>
+        <no-collide-with-tag>Belly</no-collide-with-tag>
+
+        <no-collide-with-bone>NPC R Breast</no-collide-with-bone>
+        <no-collide-with-bone>NPC L Breast</no-collide-with-bone>
+        <no-collide-with-bone>NPC R Clavicle [RClv]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R UpperArm [RUar]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R Forearm [RLar]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R Hand [RHnd]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R ForearmTwist1 [RLt1]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R ForearmTwist2 [RLt2]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R UpperarmTwist1 [RUt1]</no-collide-with-bone>
+        <no-collide-with-bone>NPC R UpperarmTwist2 [RUt2]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L Clavicle [LClv]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L UpperArm [LUar]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L Forearm [LLar]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L Hand [LHnd]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L ForearmTwist1 [LLt1]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L ForearmTwist2 [LLt2]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L UpperarmTwist1 [LUt1]</no-collide-with-bone>
+        <no-collide-with-bone>NPC L UpperarmTwist2 [LUt2]</no-collide-with-bone>
+
+    </per-vertex-shape>
+
+    <bone-default>
+        <mass>0</mass>
+    </bone-default>
+
+</system>
