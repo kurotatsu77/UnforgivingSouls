@@ -1,5 +1,7 @@
 Scriptname USLS_VirginalPiercing_RenderScript extends UD_CustomVibratorBase_RenderScript  
 
+import UnforgivingDevicesMain
+
 Armor Property USLS_Suit_1 Auto
 Armor Property USLS_Suit_2 Auto
 Armor Property USLS_Suit_3 Auto
@@ -8,13 +10,66 @@ Armor Property USLS_Suit_5 Auto
 Armor Property USLS_Suit_6 Auto
 
 bool TrialRunning = False
-int TrialsLeft = 3
+int Property TrialsTotal = 3 auto
+int TrialsLeft
 
-import UnforgivingDevicesMain
+Sound Property CumForMe auto
+
+Armor _Piercing
+Armor Property USLS_Piercing
+    Armor Function Get()
+        if !_Piercing
+            _Piercing = GetMeMyForm(0x000D7D, "Unforgiving Souls.esp") as Armor
+        endif
+        return _Piercing
+    EndFunction
+    Function Set(Armor akArmor)
+        _Piercing = akArmor
+    EndFunction
+EndProperty
+
+Armor _PiercingGlow
+Armor Property USLS_PiercingGlow
+    Armor Function Get()
+        if !_PiercingGlow
+            _PiercingGlow = GetMeMyForm(0x000D87, "Unforgiving Souls.esp") as Armor
+        endif
+        return _PiercingGlow
+    EndFunction
+    Function Set(Armor akArmor)
+        _PiercingGlow = akArmor
+    EndFunction
+EndProperty
+
+;ArmorAddon _PiercingGlowAA
+;ArmorAddon Property PiercingGlowAA
+;    ArmorAddon Function Get()
+;        if !_PiercingGlowAA
+;            _PiercingGlowAA = GetMeMyForm(0x000D7F, "Unforgiving Souls.esp") as ArmorAddon
+;        endif
+;        return _PiercingGlowAA
+;    EndFunction
+;    Function Set(ArmorAddon akArmorAA)
+;        _PiercingGlowAA = akArmorAA
+;    EndFunction
+;EndProperty
+
+ArmorAddon Property PiercingAA auto
+ArmorAddon Property PiercingGlowAA auto
+
+string Property NormalAAModelPath auto
+string Property GlowAAModelPath auto
+
+int CumSoundInstance
 
 Function InitPost()
     parent.InitPost()
     UD_DeviceType = "Piercing"
+    TrialsLeft = TrialsTotal
+    PiercingAA = USLS_Piercing.GetNthArmorAddon(0)
+    PiercingGlowAA = USLS_PiercingGlow.GetNthArmorAddon(0)
+    NormalAAModelPath = PiercingAA.GetModelPath(false, true)
+    GlowAAModelPath = PiercingGlowAA.GetModelPath(false, true)
 EndFunction
 
 Function patchDevice()
@@ -68,10 +123,14 @@ Function OnVibrationStart()
         TrialRunning = True
         if getWearer() == Game.GetPlayer()
             UDmain.Print(getDeviceName() + " starts your edging trial!")
+            CumSoundInstance = CumForMe.Play(getWearer())
         else 
             UDmain.Print(getDeviceName() + " starts " + getWearer().GetName() + "'s edging trial!")
         endif
     endif
+    ;PiercingAA.SetModelPath(GlowAAModelPath, false, true)
+    ;getWearer().addItem(USLS_PiercingGlow,1)
+    ;getWearer().EquipItem(USLS_PiercingGlow,true,true)
 EndFunction
 
 Function OnVibrationEnd()
@@ -83,12 +142,15 @@ Function OnVibrationEnd()
                 UDmain.Print("As you finish the last trial " + getDeviceName() + " releases your clitoris from it's grip.")
                 libs.unlockdevice(getWearer(), DeviceInventory, DeviceRendered, zad_DeviousDevice = libs.zad_DeviousPiercingsVaginal)
             else
-                UDmain.Print(getDeviceName() + " finishes edging trial. " + TrialsLeft + " left.")
+                UDmain.Print(getDeviceName() + " finishes edging trial. " + TrialsLeft + " left.")                
             endif
+            Sound.StopInstance(CumSoundInstance)
         else 
             UDmain.Print(getDeviceName() + " finishes " + getWearer().GetName() + "'s edging trial.")
         endif
     endif
+    ;PiercingAA.SetModelPath(NormalAAModelPath, false, true)
+    ;getWearer().UnEquipItem(USLS_PiercingGlow,true,true)
 EndFunction
 
 Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only called if OnOrgasmPre returns true. Is only called if wearer is registered
@@ -101,7 +163,7 @@ Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only cal
             UDmain.Print(getDeviceName() + " punishes " + getWearer().GetName() + " for failing edging trial!")
         endif
         TrialRunning = False
-        TrialsLeft = 3
+        TrialsLeft = TrialsTotal
     endif
 EndFunction
 
