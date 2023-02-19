@@ -2,44 +2,30 @@ Scriptname USLS_VirginalPiercing_RenderScript extends UD_CustomVibratorBase_Rend
 
 import UnforgivingDevicesMain
 
-Armor Property USLS_Suit_1 Auto
-Armor Property USLS_Suit_2 Auto
-Armor Property USLS_Suit_3 Auto
-Armor Property USLS_Suit_4 Auto
-Armor Property USLS_Suit_5 Auto
-Armor Property USLS_Suit_6 Auto
+Armor[] Property USLS_Suits Auto
 
 bool TrialRunning = False
 int Property TrialsTotal = 3 auto
 int TrialsLeft
 
 Sound Property CumForMe auto
+int CumSoundInstance
 
-Armor _Piercing
-Armor Property USLS_Piercing
-    Armor Function Get()
-        if !_Piercing
-            _Piercing = GetMeMyForm(0x000D7D, "Unforgiving Souls.esp") as Armor
-        endif
-        return _Piercing
-    EndFunction
-    Function Set(Armor akArmor)
-        _Piercing = akArmor
-    EndFunction
-EndProperty
+;TextureSet Property USLSPiercingNormalTXST auto
+;TextureSet Property USLSPiercingGlowTXST auto
 
-Armor _PiercingGlow
-Armor Property USLS_PiercingGlow
-    Armor Function Get()
-        if !_PiercingGlow
-            _PiercingGlow = GetMeMyForm(0x000D87, "Unforgiving Souls.esp") as Armor
-        endif
-        return _PiercingGlow
-    EndFunction
-    Function Set(Armor akArmor)
-        _PiercingGlow = akArmor
-    EndFunction
-EndProperty
+;Armor _PiercingGlow
+;Armor Property USLS_PiercingGlow
+;    Armor Function Get()
+;        if !_PiercingGlow
+;            _PiercingGlow = GetMeMyForm(0x000D87, "Unforgiving Souls.esp") as Armor
+;        endif
+;        return _PiercingGlow
+;    EndFunction
+;    Function Set(Armor akArmor)
+;        _PiercingGlow = akArmor
+;    EndFunction
+;EndProperty
 
 ;ArmorAddon _PiercingGlowAA
 ;ArmorAddon Property PiercingGlowAA
@@ -54,22 +40,20 @@ EndProperty
 ;    EndFunction
 ;EndProperty
 
-ArmorAddon Property PiercingAA auto
-ArmorAddon Property PiercingGlowAA auto
+;ArmorAddon Property PiercingAA auto
+;ArmorAddon Property PiercingGlowAA auto
 
-string Property NormalAAModelPath auto
-string Property GlowAAModelPath auto
-
-int CumSoundInstance
+;string Property NormalAAModelPath auto
+;string Property GlowAAModelPath auto
 
 Function InitPost()
     parent.InitPost()
     UD_DeviceType = "Piercing"
     TrialsLeft = TrialsTotal
-    PiercingAA = USLS_Piercing.GetNthArmorAddon(0)
-    PiercingGlowAA = USLS_PiercingGlow.GetNthArmorAddon(0)
-    NormalAAModelPath = PiercingAA.GetModelPath(false, true)
-    GlowAAModelPath = PiercingGlowAA.GetModelPath(false, true)
+    ;PiercingAA = USLS_Piercing.GetNthArmorAddon(0)
+    ;PiercingGlowAA = USLS_PiercingGlow.GetNthArmorAddon(0)
+    ;NormalAAModelPath = PiercingAA.GetModelPath(false, true)
+    ;GlowAAModelPath = PiercingGlowAA.GetModelPath(false, true)
 EndFunction
 
 Function patchDevice()
@@ -123,14 +107,15 @@ Function OnVibrationStart()
         TrialRunning = True
         if getWearer() == Game.GetPlayer()
             UDmain.Print(getDeviceName() + " starts your edging trial!")
-            CumSoundInstance = CumForMe.Play(getWearer())
         else 
             UDmain.Print(getDeviceName() + " starts " + getWearer().GetName() + "'s edging trial!")
         endif
+        ;PiercingAA.SetModelPath(GlowAAModelPath, false, true)
+        ;getWearer().addItem(USLS_PiercingGlow,1)
+        ;getWearer().EquipItem(USLS_PiercingGlow,true,true)
+        CumSoundInstance = CumForMe.Play(getWearer())
+        ;PO3_SKSEfunctions.ReplaceArmorTextureSet(getWearer(), DeviceInventory, USLSPiercingNormalTXST, USLSPiercingGlowTXST)
     endif
-    ;PiercingAA.SetModelPath(GlowAAModelPath, false, true)
-    ;getWearer().addItem(USLS_PiercingGlow,1)
-    ;getWearer().EquipItem(USLS_PiercingGlow,true,true)
 EndFunction
 
 Function OnVibrationEnd()
@@ -144,18 +129,25 @@ Function OnVibrationEnd()
             else
                 UDmain.Print(getDeviceName() + " finishes edging trial. " + TrialsLeft + " left.")                
             endif
-            Sound.StopInstance(CumSoundInstance)
         else 
-            UDmain.Print(getDeviceName() + " finishes " + getWearer().GetName() + "'s edging trial.")
+            if TrialsLeft < 1
+                UDmain.Print("As " + getWearer().GetName() + "finishes the last trial " + getDeviceName() + " releases her clitoris from it's grip.")
+                libs.unlockdevice(getWearer(), DeviceInventory, DeviceRendered, zad_DeviousDevice = libs.zad_DeviousPiercingsVaginal)
+            else
+                UDmain.Print(getDeviceName() + " finishes " + getWearer().GetName() + "'s edging trial.")
+            endif
         endif
+        ;PiercingAA.SetModelPath(NormalAAModelPath, false, true)
+        ;getWearer().UnEquipItem(USLS_PiercingGlow,true,true)
+        Sound.StopInstance(CumSoundInstance)
+        ;PO3_SKSEfunctions.ResetActor3D(getWearer())
     endif
-    ;PiercingAA.SetModelPath(NormalAAModelPath, false, true)
-    ;getWearer().UnEquipItem(USLS_PiercingGlow,true,true)
 EndFunction
 
 Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only called if OnOrgasmPre returns true. Is only called if wearer is registered
     ;parent.OnOrgasmPost(sexlab)
     if !getWearer().wornhaskeyword(libs.zad_deviousSuit) && TrialRunning
+        Sound.StopInstance(CumSoundInstance)
         EquipUSLSSuit()
         if getWearer() == Game.GetPlayer()
             UDmain.Print(getDeviceName() + " punishes you for failing edging trial!")
@@ -169,20 +161,8 @@ EndFunction
 
 Function EquipUSLSSuit()
     int loc_randomsuit
-    loc_randomsuit = Utility.RandomInt(1,6)
-    if loc_randomsuit == 1
-        libs.lockdevice(getWearer(), USLS_Suit_1)
-    elseif loc_randomsuit == 2
-        libs.lockdevice(getWearer(), USLS_Suit_2)
-    elseif loc_randomsuit == 3
-        libs.lockdevice(getWearer(), USLS_Suit_3)
-    elseif loc_randomsuit == 4
-        libs.lockdevice(getWearer(), USLS_Suit_4)
-    elseif loc_randomsuit == 5
-        libs.lockdevice(getWearer(), USLS_Suit_5)
-    elseif loc_randomsuit == 6
-        libs.lockdevice(getWearer(), USLS_Suit_6)
-    endif
+    loc_randomsuit = Utility.RandomInt(1,USLS_Suits.Length) - 1
+    libs.lockdevice(getWearer(), USLS_Suits[loc_randomsuit])
 EndFunction
 
 Int Function GetAiPriority()
