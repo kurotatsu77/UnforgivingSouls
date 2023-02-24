@@ -2,27 +2,61 @@ Scriptname USLS_SuitCelene_RenderScript extends UD_CustomDevice_RenderScript
 
 Armor[] Property ListParts auto
 Keyword[] Property ListKeywords auto
+int Willpower = 0
+int Property WillpowerIncrease = 10 auto
+string Property SuitName = "Celene" auto
+float Property ActivationPeriod = 0.25 auto ; activation period in game days, 0.25 equals to 6 hours
+float ActivationTimePassed = 0.0 ; how much game days passed since last activation
+Message[] Property ActivationMSG auto
 
 import UnforgivingDevicesMain
 
 Function InitPost()
     UD_DeviceType = "Suit"
     AddParts()
+    RegisterForModEvent("USLS_TrialEnd","OnTrialEnd")
 EndFunction
 
-Function AddParts()
-    int i
-    int inum
-    i = 0
-    inum = ListParts.Length
-    if inum < ListKeywords.Length
-        inum = ListKeywords.Length
+Event OnTrialEnd(string eventName, string strArg, float numArg, Form sender)
+    if strArg == "Success"
+        UDmain.Print("As you finish the trial " + getDeviceName() + " releases you from it's grip.")
+        UnlockParts()
+        unlockRestrain()
+    elseif strArg == "Fail"
+        UDmain.Print("As you fail the trial " + getDeviceName() + " drinks up on your willpower!")
+        Willpower = 0
     endif
-    while i < inum
-        if !GetWearer().wornhaskeyword(ListKeywords[i])
-            libs.LockDevice(GetWearer(),ListParts[i])
+EndEvent
+
+Function AddParts()
+    int loc_i
+    int loc_inum
+    loc_i = 0
+    loc_inum = ListParts.Length
+    if loc_inum < ListKeywords.Length
+        loc_inum = ListKeywords.Length
+    endif
+    while loc_i < loc_inum
+        if !GetWearer().wornhaskeyword(ListKeywords[loc_i])
+            libs.LockDevice(GetWearer(),ListParts[loc_i])
         endif
-        i += 1
+        loc_i += 1
+    endwhile
+EndFunction
+
+Function UnlockParts()
+    int loc_i
+    int loc_inum
+    loc_i = 0
+    loc_inum = ListParts.Length
+    if loc_inum < ListKeywords.Length
+        loc_inum = ListKeywords.Length
+    endif
+    while loc_i < loc_inum
+        if GetWearer().wornhaskeyword(ListKeywords[loc_i])
+            libs.UnLockDevice(GetWearer(),ListParts[loc_i], zad_DeviousDevice = ListKeywords[loc_i])
+        endif
+        loc_i += 1
     endwhile
 EndFunction
 
@@ -51,6 +85,40 @@ EndFunction
 
 Int Function GetAiPriority()
     return 30
+EndFunction
+
+Function OnUpdatePost(float timePassed) ;called on update. Is only called if wearer is registered
+    parent.OnUpdatePost(timePassed)
+    ActivationTimePassed = ActivationTimePassed + timePassed
+    float loc_ActivationChance
+    loc_ActivationChance = ActivationTimePassed / ActivationPeriod
+    if Utility.randomFloat(0,1) < loc_ActivationChance
+        ActivationTimePassed = 0.0
+        SuitActivate()
+    endif
+EndFunction
+
+Function SuitActivate()
+    int loc_i
+    int loc_ResistChance
+    int loc_choice
+    int loc_message
+    if Utility.RandomInt(0,100) < Willpower
+        loc_message = Utility.RandomInt(1,ActivationMSG.length) - 1
+        loc_choice = ActivationMSG[loc_message].Show()
+    else 
+        loc_choice = 0 
+    endif
+    if loc_choice == 0 
+        Willpower = Willpower + WillpowerIncrease
+        SuitAction()
+    else
+        SendModEvent("USLS_TrialStart",SuitName,1)
+    endif
+EndFunction
+
+Function SuitAction()
+    debug.messagebox("Suit makes wearer do naughty things!")
 EndFunction
 
 ;============================================================================================================================
@@ -129,9 +197,6 @@ Function OnDeviceUnlockedWithKey() ;called when device is unlocked with key
 EndFunction
 Function OnUpdatePre(float timePassed) ;called on update. Is only called if wearer is registered
     parent.OnUpdatePre(timePassed)
-EndFunction
-Function OnUpdatePost(float timePassed) ;called on update. Is only called if wearer is registered
-    parent.OnUpdatePost(timePassed)
 EndFunction
 bool Function OnCooldownActivatePre()
     return parent.OnCooldownActivatePre()

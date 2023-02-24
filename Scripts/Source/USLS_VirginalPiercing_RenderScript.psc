@@ -4,12 +4,16 @@ import UnforgivingDevicesMain
 
 Armor[] Property USLS_Suits Auto
 
-bool TrialRunning = False
+int TrialRunning = 0 ; 0 - not running, 1 - piercing trial, 2 - suit trial
 int Property TrialsTotal = 3 auto
 int TrialsLeft
 
-Sound Property CumForMe auto
+Sound[] Property CumForMe auto
 int CumSoundInstance
+
+EffectShader[] Property USLSShader auto
+EffectShader ChosenShader
+Sound ChosenSound
 
 ;TextureSet Property USLSPiercingNormalTXST auto
 ;TextureSet Property USLSPiercingGlowTXST auto
@@ -50,11 +54,46 @@ Function InitPost()
     parent.InitPost()
     UD_DeviceType = "Piercing"
     TrialsLeft = TrialsTotal
+    RegisterForModEvent("USLS_TrialStart","OnTrialStart")
     ;PiercingAA = USLS_Piercing.GetNthArmorAddon(0)
     ;PiercingGlowAA = USLS_PiercingGlow.GetNthArmorAddon(0)
     ;NormalAAModelPath = PiercingAA.GetModelPath(false, true)
     ;GlowAAModelPath = PiercingGlowAA.GetModelPath(false, true)
 EndFunction
+
+Event OnTrialStart(string eventName, string strArg, float numArg, Form sender)
+    Sound loc_sound
+    int loc_i
+    if strArg == "Karma" && TrialRunning == 0
+        TrialRunning = 2
+        if getWearer() == Game.GetPlayer()
+            UDmain.Print(getDeviceName() + " starts your edging trial for Karma suit!")
+        else 
+            UDmain.Print(getDeviceName() + " starts " + getWearer().GetName() + "'s edging trial for Karma suit!")
+        endif
+        loc_i = Utility.RandomInt(1,CumForMe.length) ; change these to suit specific ones if needed
+        loc_sound = CumForMe[loc_i - 1]
+        CumSoundInstance = loc_sound.Play(getWearer())
+        loc_i = Utility.RandomInt(1,USLSShader.length)
+        ChosenShader = USLSShader[loc_i - 1]
+        ChosenShader.Play(getWearer())
+        VibrateStart()
+    elseif strArg == "Celene" && TrialRunning == 0
+        TrialRunning = 2
+        if getWearer() == Game.GetPlayer()
+            UDmain.Print(getDeviceName() + " starts your edging trial for Celene suit!")
+        else 
+            UDmain.Print(getDeviceName() + " starts " + getWearer().GetName() + "'s edging trial for Celene suit!")
+        endif
+        loc_i = Utility.RandomInt(1,CumForMe.length) ; change these to suit specific ones if needed
+        loc_sound = CumForMe[loc_i - 1]
+        CumSoundInstance = loc_sound.Play(getWearer())
+        loc_i = Utility.RandomInt(1,USLSShader.length)
+        ChosenShader = USLSShader[loc_i - 1]
+        ChosenShader.Play(getWearer())
+        VibrateStart()
+    endif
+EndEvent
 
 Function patchDevice()
     ;UDCDmain.UDPatcher.patchPiercing(self)
@@ -103,8 +142,8 @@ float Function getAccesibility()
 EndFunction
 
 Function OnVibrationStart()
-    if !getWearer().wornhaskeyword(libs.zad_deviousSuit)
-        TrialRunning = True
+    if !getWearer().wornhaskeyword(libs.zad_deviousSuit) && TrialRunning == 0
+        TrialRunning = 1
         if getWearer() == Game.GetPlayer()
             UDmain.Print(getDeviceName() + " starts your edging trial!")
         else 
@@ -113,15 +152,22 @@ Function OnVibrationStart()
         ;PiercingAA.SetModelPath(GlowAAModelPath, false, true)
         ;getWearer().addItem(USLS_PiercingGlow,1)
         ;getWearer().EquipItem(USLS_PiercingGlow,true,true)
-        CumSoundInstance = CumForMe.Play(getWearer())
+        Sound loc_sound
+        int loc_i
+        loc_i = Utility.RandomInt(1,CumForMe.length)
+        loc_sound = CumForMe[loc_i - 1]
+        CumSoundInstance = loc_sound.Play(getWearer())
+        loc_i = Utility.RandomInt(1,USLSShader.length)
+        ChosenShader = USLSShader[loc_i - 1]
+        ChosenShader.Play(getWearer())
         ;PO3_SKSEfunctions.ReplaceArmorTextureSet(getWearer(), DeviceInventory, USLSPiercingNormalTXST, USLSPiercingGlowTXST)
     endif
 EndFunction
 
 Function OnVibrationEnd()
-    if TrialRunning
+    if TrialRunning == 1
         TrialsLeft -= 1
-        TrialRunning = False
+        TrialRunning = 0
         if getWearer() == Game.GetPlayer()
             if TrialsLeft < 1
                 UDmain.Print("As you finish the last trial " + getDeviceName() + " releases your clitoris from it's grip.")
@@ -140,7 +186,13 @@ Function OnVibrationEnd()
         ;PiercingAA.SetModelPath(NormalAAModelPath, false, true)
         ;getWearer().UnEquipItem(USLS_PiercingGlow,true,true)
         Sound.StopInstance(CumSoundInstance)
+        ChosenShader.Stop(getWearer())
         ;PO3_SKSEfunctions.ResetActor3D(getWearer())
+    elseif TrialRunning == 2
+        SendModEvent("USLS_TrialEnd","Success",1)
+        TrialRunning = 0
+        Sound.StopInstance(CumSoundInstance)
+        ChosenShader.Stop(getWearer())
     endif
 EndFunction
 
@@ -148,14 +200,20 @@ Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only cal
     ;parent.OnOrgasmPost(sexlab)
     if !getWearer().wornhaskeyword(libs.zad_deviousSuit) && TrialRunning
         Sound.StopInstance(CumSoundInstance)
+        ChosenShader.Stop(getWearer())
         EquipUSLSSuit()
         if getWearer() == Game.GetPlayer()
             UDmain.Print(getDeviceName() + " punishes you for failing edging trial!")
         else 
             UDmain.Print(getDeviceName() + " punishes " + getWearer().GetName() + " for failing edging trial!")
         endif
-        TrialRunning = False
+        TrialRunning = 0
         TrialsLeft = TrialsTotal
+    elseif TrialRunning == 2
+        SendModEvent("USLS_TrialEnd","Fail",1)
+        TrialRunning = 0
+        Sound.StopInstance(CumSoundInstance)
+        ChosenShader.Stop(getWearer())
     endif
 EndFunction
 
