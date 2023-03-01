@@ -8,8 +8,9 @@ int Willpower = 0
 int Property WillpowerIncrease = 10 auto
 string Property SuitName = "SoulSuit" auto
 float Property ActivationPeriod = 0.25 auto ; activation period in game days, 0.25 equals to 6 hours
+float Property ActivationPeriodMin = 0.05 auto ; minimal time between activations in game days, 0.04 roughly equals to 1 hour
 float ActivationTimePassed = 0.0 ; how much game days passed since last activation
-float Property TrialPeriod = 0.05 auto ; trial duration in days 0.04 roughly equals to 1 hour
+float Property TrialPeriod = 0.05 auto ; trial duration in days 0.04, roughly equals to 1 hour
 Message[] Property ActivationMSG auto
 bool TrialRunning
 Sound[] Property CumForMe auto
@@ -27,7 +28,8 @@ Function InitPost()
     UD_DeviceType = "Suit"
     TrialRunning = false
     AddParts()
-    SuitVariable.SetValue(1)
+    ;SuitVariable.SetValue(1)
+    SuitActivate()
     ;RegisterForModEvent("USLS_TrialEnd","OnTrialEnd")
 EndFunction
 
@@ -104,14 +106,14 @@ EndFunction
 Function OnUpdatePost(float timePassed) ;called on update. Is only called if wearer is registered
     parent.OnUpdatePost(timePassed)
     ActivationTimePassed = ActivationTimePassed + timePassed
-    if !TrialRunning
+    if !TrialRunning && !libs.IsAnimating(getWearer()) && (ActivationTimePassed > ActivationPeriodMin)
         float loc_ActivationChance
         loc_ActivationChance = ActivationTimePassed / ActivationPeriod
         if Utility.randomFloat(0,1) < loc_ActivationChance
             ActivationTimePassed = 0.0
             SuitActivate()
         endif
-    else
+    elseif TrialRunning
         if ActivationTimePassed >= TrialPeriod
             Sound.StopInstance(CumSoundInstance)
             ChosenShader.Stop(getWearer())

@@ -6,7 +6,8 @@ Scriptname USLS_TIF__0902CB75 Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-SexLabUtil.QuickStart(Game.GetPlayer(), akSpeaker, animationTags = "Blowjob")
+;SexLabUtil.QuickStart(Game.GetPlayer(), akSpeaker, animationTags = "Blowjob")
+(GetOwningQuest() as USLS_KarmaSC).startSex(akSpeaker)
 ;END CODE
 EndFunction
 ;END FRAGMENT

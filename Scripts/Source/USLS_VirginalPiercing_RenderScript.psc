@@ -198,17 +198,19 @@ EndFunction
 
 Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only called if OnOrgasmPre returns true. Is only called if wearer is registered
     ;parent.OnOrgasmPost(sexlab)
-    if !getWearer().wornhaskeyword(libs.zad_deviousSuit) && TrialRunning
+    if TrialRunning
         Sound.StopInstance(CumSoundInstance)
         ChosenShader.Stop(getWearer())
-        EquipUSLSSuit()
-        if getWearer() == Game.GetPlayer()
-            UDmain.Print(getDeviceName() + " punishes you for failing edging trial!")
-        else 
-            UDmain.Print(getDeviceName() + " punishes " + getWearer().GetName() + " for failing edging trial!")
-        endif
         TrialRunning = 0
         TrialsLeft = TrialsTotal
+        if !getWearer().wornhaskeyword(libs.zad_deviousSuit)
+            EquipUSLSSuit()
+            if getWearer() == Game.GetPlayer()
+                UDmain.Print(getDeviceName() + " punishes you for failing edging trial!")
+            else 
+                UDmain.Print(getDeviceName() + " punishes " + getWearer().GetName() + " for failing edging trial!")
+            endif
+        endif
     ;elseif TrialRunning == 2
     ;    SendModEvent("USLS_TrialEnd","Fail",1)
     ;    TrialRunning = 0
