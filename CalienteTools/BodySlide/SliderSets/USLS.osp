@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SliderSetInfo version="1">
+    <SliderSet name="USLS - Vaginal Piercing">
+        <DataFolder>USLS</DataFolder>
+        <SourceFile>USLSVaginalPiercing.nif</SourceFile>
+        <OutputPath>meshes\USLS</OutputPath>
+        <OutputFile GenWeights="true">USLSVaginalPiercing</OutputFile>
+        <Shape target="Gem">Gem</Shape>
+        <Shape target="Piercings">Piercings</Shape>
+        <Shape target="Shield">Shield</Shape>
+        <Slider name="BigButt" invert="false" small="0" big="0">
+            <Data name="ShieldBigButt" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldBigButt</Data>
+            <Data name="GemBigButt" target="Gem" local="true">USLSVaginalPiercing.osd\GemBigButt</Data>
+            <Data name="PiercingsBigButt" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsBigButt</Data>
+        </Slider>
+        <Slider name="ButtClassic" invert="false" small="0" big="0">
+            <Data name="ShieldButtClassic" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldButtClassic</Data>
+            <Data name="GemButtClassic" target="Gem" local="true">USLSVaginalPiercing.osd\GemButtClassic</Data>
+            <Data name="PiercingsButtClassic" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsButtClassic</Data>
+        </Slider>
+        <Slider name="ButtShape2" invert="false" small="0" big="0">
+            <Data name="ShieldButtShape2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldButtShape2</Data>
+            <Data name="GemButtShape2" target="Gem" local="true">USLSVaginalPiercing.osd\GemButtShape2</Data>
+            <Data name="PiercingsButtShape2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsButtShape2</Data>
+        </Slider>
+        <Slider name="ButtSmall" invert="false" small="0" big="0">
+            <Data name="ShieldButtSmall" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldButtSmall</Data>
+            <Data name="GemButtSmall" target="Gem" local="true">USLSVaginalPiercing.osd\GemButtSmall</Data>
+            <Data name="PiercingsButtSmall" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsButtSmall</Data>
+        </Slider>
+        <Slider name="ChubbyButt" invert="false" small="0" big="0">
+            <Data name="ShieldChubbyButt" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldChubbyButt</Data>
+            <Data name="GemChubbyButt" target="Gem" local="true">USLSVaginalPiercing.osd\GemChubbyButt</Data>
+            <Data name="PiercingsChubbyButt" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsChubbyButt</Data>
+        </Slider>
+        <Slider name="ChubbyLegs" invert="false" small="0" big="0">
+            <Data name="ShieldChubbyLegs" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldChubbyLegs</Data>
+            <Data name="GemChubbyLegs" target="Gem" local="true">USLSVaginalPiercing.osd\GemChubbyLegs</Data>
+            <Data name="PiercingsChubbyLegs" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsChubbyLegs</Data>
+        </Slider>
+        <Slider name="CrotchBack" invert="false" small="0" big="0">
+            <Data name="ShieldCrotchBack" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldCrotchBack</Data>
+            <Data name="GemCrotchBack" target="Gem" local="true">USLSVaginalPiercing.osd\GemCrotchBack</Data>
+            <Data name="PiercingsCrotchBack" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsCrotchBack</Data>
+        </Slider>
+        <Slider name="Groin" invert="false" small="0" big="0">
+            <Data name="ShieldGroin" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldGroin</Data>
+            <Data name="GemGroin" target="Gem" local="true">USLSVaginalPiercing.osd\GemGroin</Data>
+            <Data name="PiercingsGroin" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsGroin</Data>
+        </Slider>
+        <Slider name="HipBone" invert="false" small="0" big="0">
+            <Data name="ShieldHipBone" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldHipBone</Data>
+            <Data name="GemHipBone" target="Gem" local="true">USLSVaginalPiercing.osd\GemHipBone</Data>
+            <Data name="PiercingsHipBone" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsHipBone</Data>
+        </Slider>
+        <Slider name="HipForward" invert="false" small="0" big="0">
+            <Data name="ShieldHipForward" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldHipForward</Data>
+            <Data name="GemHipForward" target="Gem" local="true">USLSVaginalPiercing.osd\GemHipForward</Data>
+            <Data name="PiercingsHipForward" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsHipForward</Data>
+        </Slider>
+        <Slider name="Hips" invert="false" small="0" big="0">
+            <Data name="ShieldHips" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldHips</Data>
+            <Data name="GemHips" target="Gem" local="true">USLSVaginalPiercing.osd\GemHips</Data>
+            <Data name="PiercingsHips" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsHips</Data>
+        </Slider>
+        <Slider name="MuscleAbs" invert="false" small="0" big="0">
+            <Data name="GemMuscleAbs" target="Gem" local="true">USLSVaginalPiercing.osd\GemMuscleAbs</Data>
+            <Data name="PiercingsMuscleAbs" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsMuscleAbs</Data>
+        </Slider>
+        <Slider name="MuscleLegs" invert="false" small="0" big="0">
+            <Data name="ShieldMuscleLegs" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldMuscleLegs</Data>
+            <Data name="GemMuscleLegs" target="Gem" local="true">USLSVaginalPiercing.osd\GemMuscleLegs</Data>
+            <Data name="PiercingsMuscleLegs" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsMuscleLegs</Data>
+        </Slider>
+        <Slider name="PregnancyBelly" invert="false" small="0" big="0">
+            <Data name="ShieldPregnancyBelly" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldPregnancyBelly</Data>
+            <Data name="GemPregnancyBelly" target="Gem" local="true">USLSVaginalPiercing.osd\GemPregnancyBelly</Data>
+            <Data name="PiercingsPregnancyBelly" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsPregnancyBelly</Data>
+        </Slider>
+        <Slider name="SlimThighs" invert="false" small="0" big="0">
+            <Data name="ShieldSlimThighs" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldSlimThighs</Data>
+            <Data name="GemSlimThighs" target="Gem" local="true">USLSVaginalPiercing.osd\GemSlimThighs</Data>
+            <Data name="PiercingsSlimThighs" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsSlimThighs</Data>
+        </Slider>
+        <Slider name="Thighs" invert="false" small="0" big="0">
+            <Data name="ShieldThighs" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldThighs</Data>
+            <Data name="GemThighs" target="Gem" local="true">USLSVaginalPiercing.osd\GemThighs</Data>
+            <Data name="PiercingsThighs" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsThighs</Data>
+        </Slider>
+        <Slider name="ThighFBThicc_v2" invert="false" small="0" big="0">
+            <Data name="ShieldThighFBThicc_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldThighFBThicc_v2</Data>
+            <Data name="GemThighFBThicc_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemThighFBThicc_v2</Data>
+            <Data name="PiercingsThighFBThicc_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsThighFBThicc_v2</Data>
+        </Slider>
+        <Slider name="LegSpread_v2" invert="false" small="0" big="0">
+            <Data name="GemLegSpread_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemLegSpread_v2</Data>
+            <Data name="PiercingsLegSpread_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLegSpread_v2</Data>
+        </Slider>
+        <Slider name="TummyTuck" invert="false" small="0" big="0">
+            <Data name="ShieldTummyTuck" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldTummyTuck</Data>
+            <Data name="GemTummyTuck" target="Gem" local="true">USLSVaginalPiercing.osd\GemTummyTuck</Data>
+            <Data name="PiercingsTummyTuck" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsTummyTuck</Data>
+        </Slider>
+        <Slider name="7B Lower" invert="false" small="0" big="0">
+            <Data name="Shield7B Lower" target="Shield" local="true">USLSVaginalPiercing.osd\Shield7B Lower</Data>
+            <Data name="Gem7B Lower" target="Gem" local="true">USLSVaginalPiercing.osd\Gem7B Lower</Data>
+            <Data name="Piercings7B Lower" target="Piercings" local="true">USLSVaginalPiercing.osd\Piercings7B Lower</Data>
+        </Slider>
+        <Slider name="VanillaSSEHi" invert="false" small="0" big="0">
+            <Data name="ShieldVanillaSSEHi" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldVanillaSSEHi</Data>
+            <Data name="GemVanillaSSEHi" target="Gem" local="true">USLSVaginalPiercing.osd\GemVanillaSSEHi</Data>
+            <Data name="PiercingsVanillaSSEHi" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsVanillaSSEHi</Data>
+        </Slider>
+        <Slider name="VanillaSSELo" invert="false" small="0" big="0">
+            <Data name="ShieldVanillaSSELo" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldVanillaSSELo</Data>
+            <Data name="GemVanillaSSELo" target="Gem" local="true">USLSVaginalPiercing.osd\GemVanillaSSELo</Data>
+            <Data name="PiercingsVanillaSSELo" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsVanillaSSELo</Data>
+        </Slider>
+        <Slider name="OldBaseShape" invert="false" small="0" big="0">
+            <Data name="ShieldOldBaseShape" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldOldBaseShape</Data>
+            <Data name="GemOldBaseShape" target="Gem" local="true">USLSVaginalPiercing.osd\GemOldBaseShape</Data>
+            <Data name="PiercingsOldBaseShape" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsOldBaseShape</Data>
+        </Slider>
+        <Slider name="Innieoutie" invert="false" small="0" big="0">
+            <Data name="ShieldInnieoutie" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldInnieoutie</Data>
+            <Data name="GemInnieoutie" target="Gem" local="true">USLSVaginalPiercing.osd\GemInnieoutie</Data>
+            <Data name="PiercingsInnieoutie" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsInnieoutie</Data>
+        </Slider>
+        <Slider name="Labiapuffyness" invert="false" small="0" big="0">
+            <Data name="ShieldLabiapuffyness" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiapuffyness</Data>
+            <Data name="GemLabiapuffyness" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiapuffyness</Data>
+            <Data name="PiercingsLabiapuffyness" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiapuffyness</Data>
+        </Slider>
+        <Slider name="LabiaMorePuffyness_v2" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaMorePuffyness_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaMorePuffyness_v2</Data>
+            <Data name="GemLabiaMorePuffyness_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiaMorePuffyness_v2</Data>
+            <Data name="PiercingsLabiaMorePuffyness_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaMorePuffyness_v2</Data>
+        </Slider>
+        <Slider name="Labiaprotrude" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaprotrude" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaprotrude</Data>
+        </Slider>
+        <Slider name="Labiaprotrude2" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaprotrude2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaprotrude2</Data>
+            <Data name="PiercingsLabiaprotrude2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaprotrude2</Data>
+        </Slider>
+        <Slider name="Labiaspread" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaspread" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaspread</Data>
+            <Data name="GemLabiaspread" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiaspread</Data>
+            <Data name="PiercingsLabiaspread" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaspread</Data>
+        </Slider>
+        <Slider name="LabiaCrumpled_v2" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaCrumpled_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaCrumpled_v2</Data>
+            <Data name="GemLabiaCrumpled_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiaCrumpled_v2</Data>
+            <Data name="PiercingsLabiaCrumpled_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaCrumpled_v2</Data>
+        </Slider>
+        <Slider name="LabiaNeat_v2" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaNeat_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaNeat_v2</Data>
+            <Data name="GemLabiaNeat_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiaNeat_v2</Data>
+            <Data name="PiercingsLabiaNeat_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaNeat_v2</Data>
+        </Slider>
+        <Slider name="LabiaBulgogi_v2" invert="false" small="0" big="0">
+            <Data name="ShieldLabiaBulgogi_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldLabiaBulgogi_v2</Data>
+            <Data name="GemLabiaBulgogi_v2" target="Gem" local="true">USLSVaginalPiercing.osd\GemLabiaBulgogi_v2</Data>
+            <Data name="PiercingsLabiaBulgogi_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsLabiaBulgogi_v2</Data>
+        </Slider>
+        <Slider name="VaginaHole" invert="false" small="0" big="0">
+            <Data name="ShieldVaginaHole" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldVaginaHole</Data>
+            <Data name="GemVaginaHole" target="Gem" local="true">USLSVaginalPiercing.osd\GemVaginaHole</Data>
+            <Data name="PiercingsVaginaHole" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsVaginaHole</Data>
+        </Slider>
+        <Slider name="Clit" invert="false" small="0" big="0">
+            <Data name="ShieldClit" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldClit</Data>
+            <Data name="PiercingsClit" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsClit</Data>
+        </Slider>
+        <Slider name="ClitSwell_v2" invert="false" small="0" big="0">
+            <Data name="ShieldClitSwell_v2" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldClitSwell_v2</Data>
+            <Data name="PiercingsClitSwell_v2" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsClitSwell_v2</Data>
+        </Slider>
+        <Slider name="Cutepuffyness" invert="false" small="0" big="0">
+            <Data name="ShieldCutepuffyness" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldCutepuffyness</Data>
+            <Data name="GemCutepuffyness" target="Gem" local="true">USLSVaginalPiercing.osd\GemCutepuffyness</Data>
+            <Data name="PiercingsCutepuffyness" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsCutepuffyness</Data>
+        </Slider>
+        <Slider name="CBPC" invert="false" small="0" big="0">
+            <Data name="ShieldCBPC" target="Shield" local="true">USLSVaginalPiercing.osd\ShieldCBPC</Data>
+            <Data name="GemCBPC" target="Gem" local="true">USLSVaginalPiercing.osd\GemCBPC</Data>
+            <Data name="PiercingsCBPC" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsCBPC</Data>
+        </Slider>
+        <Slider name="CrotchGap" invert="false" small="0" big="0">
+            <Data name="PiercingsCrotchGap" target="Piercings" local="true">USLSVaginalPiercing.osd\PiercingsCrotchGap</Data>
+        </Slider>
+    </SliderSet>
+</SliderSetInfo>

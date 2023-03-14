@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="description.xsd">
+
+	
+	<per-triangle-shape name="VirtualGround">
+		<margin>1</margin>
+		<prenetration>4</prenetration>
+		<shared>private</shared>
+		<no-collide-with-tag>Xingcb</no-collide-with-tag>
+		<no-collide-with-tag>Xingch</no-collide-with-tag>
+		<can-collide-with-tag>XingHair</can-collide-with-tag>
+		<no-collide-with-tag>ground</no-collide-with-tag>
+	</per-triangle-shape>
+	
+	
+	<bone name="R Breast01"/>
+	<bone name="L Breast01"/>
+	<bone name="R Breast02"/>
+	<bone name="L Breast02"/>
+	<bone name="R Breast03"/>
+	<bone name="L Breast03"/>
+
+	<bone name="NPC RT Anus2"/>
+	<bone name="NPC LT Anus2"/>
+	<bone name="NPC LB Anus2"/>
+	<bone name="NPC RB Anus2"/>
+
+	<bone name="NPC L Thigh [LThg]"/>
+	<bone name="NPC R Thigh [RThg]"/>
+	<bone name="NPC L Calf [LClf]"/>
+	<bone name="NPC R Calf [RClf]"/>
+	<bone name="NPC R RearCalf [RrClf]"/>
+	<bone name="NPC L RearCalf [LrClf]"/>
+	<bone name="NPC L FrontThigh"/>
+	<bone name="NPC R FrontThigh"/>
+	<bone name="NPC L RearThigh"/>
+	<bone name="NPC R RearThigh"/>
+	<bone name="Clitoral1"/>
+	<bone name="VaginaDeep1"/>
+	<bone name="NPC Spine [Spn0]"/>
+	<bone name="NPC Spine2 [Spn2]"/>
+	<bone name="NPC Spine1 [Spn1]"/>
+	<bone name="NPC Pelvis [Pelv]"/>
+	<bone name="NPC Head [Head]"/>
+	<bone name="NPC L Clavicle [LClv]"/>
+	<bone name="NPC R Clavicle [RClv]"/>
+	<bone name="NPC L Breast"/>
+	<bone name="NPC R Breast"/>
+	<bone name="NPC L Breast01"/>
+	<bone name="NPC R Breast01"/>
+	<bone name="NPC L Forearm [LLar]"/>
+	<bone name="NPC R Forearm [RLar]"/>
+	<bone name="NPC L ForearmTwist1 [LLt1]"/>
+	<bone name="NPC R ForearmTwist1 [RLt1]"/>
+	<bone name="NPC L ForearmTwist2 [LLt2]"/>
+	<bone name="NPC R ForearmTwist2 [RLt2]"/>
+	<bone name="NPC L UpperArm [LUar]"/>
+	<bone name="NPC R UpperArm [RUar]"/>
+	<bone name="NPC L UpperarmTwist1 [LUt1]"/>
+	<bone name="NPC R UpperarmTwist1 [RUt1]"/>
+	<bone name="NPC L UpperarmTwist2 [LUt2]"/>
+	<bone name="NPC R UpperarmTwist2 [RUt2]"/>
+	<bone name="NPC L Butt"/>
+	<bone name="NPC R Butt"/>
+	<bone name="NPC L Pussy02"/>
+	<bone name="NPC R Pussy02"/>
+	<bone name="NPC Belly"/>
+	<bone name="NPC L Hand [LHnd]"/>
+	<bone name="NPC R Hand [RHnd]"/>
+	
+	
+	
+	<per-triangle-shape name="collision head">
+		<margin>0.01</margin>
+		<priority>0</priority>
+		<prenetration>0.1</prenetration>
+		<shared>private</shared>
+		<tag>Xingch</tag>
+		<can-collide-with-tag>XingHair</can-collide-with-tag>
+		<no-collide-with-tag>Xingcb</no-collide-with-tag>
+		<no-collide-with-tag>ground</no-collide-with-tag>
+		<no-collide-with-tag>Xingch</no-collide-with-tag>
+		<weight-threshold bone="NPC Spine2 [Spn2]">0.3</weight-threshold>
+		<weight-threshold bone="NPC Head [Head]">0.5</weight-threshold>
+	</per-triangle-shape>
+	
+	
+	
+	
+	 <bone-default>
+		<mass>0.1</mass>
+		<inertia x="16" y="16" z="16" />
+		<centerOfMassTransform>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</centerOfMassTransform>
+		<linearDamping>0.75</linearDamping>
+		<angularDamping>0.75</angularDamping>
+		<friction>0.2</friction>
+		<restitution>0.5</restitution>
+		<gravity-factor>0.93</gravity-factor>
+	</bone-default>
+	
+<bone-default>
+		<margin-multiplier>0.01</margin-multiplier>
+	</bone-default>
+
+	
+	<bone name="SG_lovelution_1L1 1"/>
+	<bone name="SG_lovelution_1L1 2"/>
+	<bone name="SG_lovelution_1L1 3"/>
+	<bone name="SG_lovelution_1L1 4"/>
+	<bone name="SG_lovelution_1L1 5"/>
+	<bone name="SG_lovelution_1L1 6"/>
+	<bone name="SG_lovelution_1L2 1"/>
+	<bone name="SG_lovelution_1L2 2"/>
+	<bone name="SG_lovelution_1L2 3"/>
+	<bone name="SG_lovelution_1L2 4"/>
+	<bone name="SG_lovelution_1L2 5"/>
+	<bone name="SG_lovelution_1L2 6"/>
+	<bone name="SG_lovelution_1L3 1"/>
+	<bone name="SG_lovelution_1L3 2"/>
+	<bone name="SG_lovelution_1L3 3"/>
+	<bone name="SG_lovelution_1L3 4"/>
+	<bone name="SG_lovelution_1L3 5"/>
+	<bone name="SG_lovelution_1L3 6"/>
+	<bone name="SG_lovelution_1L4 1"/>
+	<bone name="SG_lovelution_1L4 2"/>
+	<bone name="SG_lovelution_1L4 3"/>
+	<bone name="SG_lovelution_1L4 4"/>
+	<bone name="SG_lovelution_1L4 5"/>
+	<bone name="SG_lovelution_1L4 6"/>
+	<bone name="SG_lovelution_1L5 1"/>
+	<bone name="SG_lovelution_1L5 2"/>
+	<bone name="SG_lovelution_1L5 3"/>
+	<bone name="SG_lovelution_1L5 4"/>
+	<bone name="SG_lovelution_1L5 5"/>
+	<bone name="SG_lovelution_1L5 6"/>
+	<bone name="SG_lovelution_1R1 1"/>
+	<bone name="SG_lovelution_1R1 2"/>
+	<bone name="SG_lovelution_1R1 3"/>
+	<bone name="SG_lovelution_1R1 4"/>
+	<bone name="SG_lovelution_1R1 5"/>
+	<bone name="SG_lovelution_1R1 6"/>
+	<bone name="SG_lovelution_1R2 1"/>
+	<bone name="SG_lovelution_1R2 2"/>
+	<bone name="SG_lovelution_1R2 3"/>
+	<bone name="SG_lovelution_1R2 4"/>
+	<bone name="SG_lovelution_1R2 5"/>
+	<bone name="SG_lovelution_1R2 6"/>
+	<bone name="SG_lovelution_1R3 1"/>
+	<bone name="SG_lovelution_1R3 2"/>
+	<bone name="SG_lovelution_1R3 3"/>
+	<bone name="SG_lovelution_1R3 4"/>
+	<bone name="SG_lovelution_1R3 5"/>
+	<bone name="SG_lovelution_1R3 6"/>
+	<bone name="SG_lovelution_1R4 1"/>
+	<bone name="SG_lovelution_1R4 2"/>
+	<bone name="SG_lovelution_1R4 3"/>
+	<bone name="SG_lovelution_1R4 4"/>
+	<bone name="SG_lovelution_1R4 5"/>
+	<bone name="SG_lovelution_1R4 6"/>
+	<bone name="SG_lovelution_1R5 1"/>
+	<bone name="SG_lovelution_1R5 2"/>
+	<bone name="SG_lovelution_1R5 3"/>
+	<bone name="SG_lovelution_1R5 4"/>
+	<bone name="SG_lovelution_1R5 5"/>
+	<bone name="SG_lovelution_1R5 6"/>
+	<bone name="SG_lovelution_2L1 1"/>
+	<bone name="SG_lovelution_2L1 2"/>
+	<bone name="SG_lovelution_2L1 3"/>
+	<bone name="SG_lovelution_2L1 4"/>
+	<bone name="SG_lovelution_2L1 5"/>
+	<bone name="SG_lovelution_2L1 6"/>
+	<bone name="SG_lovelution_2L2 1"/>
+	<bone name="SG_lovelution_2L2 2"/>
+	<bone name="SG_lovelution_2L2 3"/>
+	<bone name="SG_lovelution_2L2 4"/>
+	<bone name="SG_lovelution_2L2 5"/>
+	<bone name="SG_lovelution_2L2 6"/>
+	<bone name="SG_lovelution_2L3 1"/>
+	<bone name="SG_lovelution_2L3 2"/>
+	<bone name="SG_lovelution_2L3 3"/>
+	<bone name="SG_lovelution_2L3 4"/>
+	<bone name="SG_lovelution_2L3 5"/>
+	<bone name="SG_lovelution_2L3 6"/>
+	<bone name="SG_lovelution_2L4 1"/>
+	<bone name="SG_lovelution_2L4 2"/>
+	<bone name="SG_lovelution_2L4 3"/>
+	<bone name="SG_lovelution_2L4 4"/>
+	<bone name="SG_lovelution_2L4 5"/>
+	<bone name="SG_lovelution_2L4 6"/>
+	<bone name="SG_lovelution_2R1 1"/>
+	<bone name="SG_lovelution_2R1 2"/>
+	<bone name="SG_lovelution_2R1 3"/>
+	<bone name="SG_lovelution_2R1 4"/>
+	<bone name="SG_lovelution_2R1 5"/>
+	<bone name="SG_lovelution_2R1 6"/>
+	<bone name="SG_lovelution_2R2 1"/>
+	<bone name="SG_lovelution_2R2 2"/>
+	<bone name="SG_lovelution_2R2 3"/>
+	<bone name="SG_lovelution_2R2 4"/>
+	<bone name="SG_lovelution_2R2 5"/>
+	<bone name="SG_lovelution_2R2 6"/>
+	<bone name="SG_lovelution_2R3 1"/>
+	<bone name="SG_lovelution_2R3 2"/>
+	<bone name="SG_lovelution_2R3 3"/>
+	<bone name="SG_lovelution_2R3 4"/>
+	<bone name="SG_lovelution_2R3 5"/>
+	<bone name="SG_lovelution_2R3 6"/>
+	<bone name="SG_lovelution_2R4 1"/>
+	<bone name="SG_lovelution_2R4 2"/>
+	<bone name="SG_lovelution_2R4 3"/>
+	<bone name="SG_lovelution_2R4 4"/>
+	<bone name="SG_lovelution_2R4 5"/>
+	<bone name="SG_lovelution_2R4 6"/>
+	<bone name="SG_lovelution_miniB1 1"/>
+	<bone name="SG_lovelution_miniB1 2"/>
+	<bone name="SG_lovelution_miniB1 3"/>
+	<bone name="SG_lovelution_miniB2 1"/>
+	<bone name="SG_lovelution_miniB2 2"/>
+	<bone name="SG_lovelution_miniB2 3"/>
+	<bone name="SG_lovelution_miniB3 1"/>
+	<bone name="SG_lovelution_miniB3 2"/>
+	<bone name="SG_lovelution_miniB3 3"/>
+	<bone name="SG_lovelution_miniB4 1"/>
+	<bone name="SG_lovelution_miniB4 2"/>
+	<bone name="SG_lovelution_miniB4 3"/>
+	<bone name="SG_lovelution_miniB5 1"/>
+	<bone name="SG_lovelution_miniB5 2"/>
+	<bone name="SG_lovelution_miniB5 3"/>
+	<bone name="SG_lovelution_miniB6 1"/>
+	<bone name="SG_lovelution_miniB6 2"/>
+	<bone name="SG_lovelution_miniB6 3"/>
+	<bone name="SG_lovelution_miniB7 1"/>
+	<bone name="SG_lovelution_miniB7 2"/>
+	<bone name="SG_lovelution_miniB7 3"/>
+	<bone name="SG_lovelution_miniB8 1"/>
+	<bone name="SG_lovelution_miniB8 2"/>
+	<bone name="SG_lovelution_miniB8 3"/>
+	<bone name="SG_lovelution_miniF1 1"/>
+	<bone name="SG_lovelution_miniF1 2"/>
+	<bone name="SG_lovelution_miniF1 3"/>
+	<bone name="SG_lovelution_miniF1 4"/>
+	<bone name="SG_lovelution_miniF2 1"/>
+	<bone name="SG_lovelution_miniF2 2"/>
+	<bone name="SG_lovelution_miniF2 3"/>
+	<bone name="SG_lovelution_miniF2 4"/>
+	<bone name="SG_lovelution_miniF3 1"/>
+	<bone name="SG_lovelution_miniF3 2"/>
+	<bone name="SG_lovelution_miniF3 3"/>
+	<bone name="SG_lovelution_miniF4 1"/>
+	<bone name="SG_lovelution_miniF4 2"/>
+	<bone name="SG_lovelution_miniF4 3"/>
+	<bone name="SG_lovelution_miniF5 1"/>
+	<bone name="SG_lovelution_miniF5 2"/>
+	<bone name="SG_lovelution_miniF5 3"/>
+	<bone name="SG_lovelution_miniF5 4"/>
+	<bone name="SG_lovelution_miniF6 1"/>
+	<bone name="SG_lovelution_miniF6 2"/>
+	<bone name="SG_lovelution_miniF6 3"/>
+	<bone name="SG_lovelution_miniF6 4"/>
+	<bone name="SG_lovelution_miniL1 1"/>
+	<bone name="SG_lovelution_miniL1 2"/>
+	<bone name="SG_lovelution_miniL1 3"/>
+	<bone name="SG_lovelution_miniL2 1"/>
+	<bone name="SG_lovelution_miniL2 2"/>
+	<bone name="SG_lovelution_miniL2 3"/>
+	<bone name="SG_lovelution_miniR1 1"/>
+	<bone name="SG_lovelution_miniR1 2"/>
+	<bone name="SG_lovelution_miniR1 3"/>
+	<bone name="SG_lovelution_miniR2 1"/>
+	<bone name="SG_lovelution_miniR2 2"/>
+	<bone name="SG_lovelution_miniR2 3"/>
+	 
+	 
+
+	 
+	
+<generic-constraint-default>
+		<frameInB>
+			<basis x="0" y="0" z="0" w="1" />
+			<origin x="0" y="0" z="0" />
+		</frameInB>
+		<useLinearReferenceFrameA>false</useLinearReferenceFrameA>
+		<linearLowerLimit x="0" y="0" z="0" />
+		<linearUpperLimit x="0" y="0" z="0" />
+		<angularLowerLimit x="-0.02" y="-0.2" z="-0.2" />
+		<angularUpperLimit x="0.02" y="0.2" z="0.2" />
+		<linearStiffness x="0" y="0" z="0" />
+		<angularStiffness x="44440" y="44440" z="44440" />
+		<linearDamping x="0" y="0" z="0" />
+		<angularDamping x="0" y="0" z="0" />
+		<linearEquilibrium x="0" y="0" z="0" />
+		<angularEquilibrium x="0" y="0" z="0" />
+	</generic-constraint-default>
+	 <generic-constraint bodyA="SG_lovelution_1L1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1L1 2" bodyB="SG_lovelution_1L1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1L1 3" bodyB="SG_lovelution_1L1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1L1 4" bodyB="SG_lovelution_1L1 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1L1 5" bodyB="SG_lovelution_1L1 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1L1 6" bodyB="SG_lovelution_1L1 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 2" bodyB="SG_lovelution_1L2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 3" bodyB="SG_lovelution_1L2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 4" bodyB="SG_lovelution_1L2 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 5" bodyB="SG_lovelution_1L2 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1L2 6" bodyB="SG_lovelution_1L2 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 2" bodyB="SG_lovelution_1L3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 3" bodyB="SG_lovelution_1L3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 4" bodyB="SG_lovelution_1L3 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 5" bodyB="SG_lovelution_1L3 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1L3 6" bodyB="SG_lovelution_1L3 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 2" bodyB="SG_lovelution_1L4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 3" bodyB="SG_lovelution_1L4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 4" bodyB="SG_lovelution_1L4 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 5" bodyB="SG_lovelution_1L4 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1L4 6" bodyB="SG_lovelution_1L4 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 2" bodyB="SG_lovelution_1L5 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 3" bodyB="SG_lovelution_1L5 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 4" bodyB="SG_lovelution_1L5 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 5" bodyB="SG_lovelution_1L5 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1L5 6" bodyB="SG_lovelution_1L5 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 2" bodyB="SG_lovelution_1R1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 3" bodyB="SG_lovelution_1R1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 4" bodyB="SG_lovelution_1R1 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 5" bodyB="SG_lovelution_1R1 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1R1 6" bodyB="SG_lovelution_1R1 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 2" bodyB="SG_lovelution_1R2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 3" bodyB="SG_lovelution_1R2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 4" bodyB="SG_lovelution_1R2 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 5" bodyB="SG_lovelution_1R2 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1R2 6" bodyB="SG_lovelution_1R2 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 2" bodyB="SG_lovelution_1R3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 3" bodyB="SG_lovelution_1R3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 4" bodyB="SG_lovelution_1R3 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 5" bodyB="SG_lovelution_1R3 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1R3 6" bodyB="SG_lovelution_1R3 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 2" bodyB="SG_lovelution_1R4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 3" bodyB="SG_lovelution_1R4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 4" bodyB="SG_lovelution_1R4 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 5" bodyB="SG_lovelution_1R4 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1R4 6" bodyB="SG_lovelution_1R4 5"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 2" bodyB="SG_lovelution_1R5 1"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 3" bodyB="SG_lovelution_1R5 2"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 4" bodyB="SG_lovelution_1R5 3"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 5" bodyB="SG_lovelution_1R5 4"/>
+	 <generic-constraint bodyA="SG_lovelution_1R5 6" bodyB="SG_lovelution_1R5 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 2" bodyB="SG_lovelution_2L1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 3" bodyB="SG_lovelution_2L1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 4" bodyB="SG_lovelution_2L1 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 5" bodyB="SG_lovelution_2L1 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2L1 6" bodyB="SG_lovelution_2L1 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 2" bodyB="SG_lovelution_2L2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 3" bodyB="SG_lovelution_2L2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 4" bodyB="SG_lovelution_2L2 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 5" bodyB="SG_lovelution_2L2 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2L2 6" bodyB="SG_lovelution_2L2 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 2" bodyB="SG_lovelution_2L3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 3" bodyB="SG_lovelution_2L3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 4" bodyB="SG_lovelution_2L3 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 5" bodyB="SG_lovelution_2L3 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2L3 6" bodyB="SG_lovelution_2L3 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 2" bodyB="SG_lovelution_2L4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 3" bodyB="SG_lovelution_2L4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 4" bodyB="SG_lovelution_2L4 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 5" bodyB="SG_lovelution_2L4 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2L4 6" bodyB="SG_lovelution_2L4 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 2" bodyB="SG_lovelution_2R1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 3" bodyB="SG_lovelution_2R1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 4" bodyB="SG_lovelution_2R1 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 5" bodyB="SG_lovelution_2R1 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2R1 6" bodyB="SG_lovelution_2R1 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 2" bodyB="SG_lovelution_2R2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 3" bodyB="SG_lovelution_2R2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 4" bodyB="SG_lovelution_2R2 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 5" bodyB="SG_lovelution_2R2 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2R2 6" bodyB="SG_lovelution_2R2 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 2" bodyB="SG_lovelution_2R3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 3" bodyB="SG_lovelution_2R3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 4" bodyB="SG_lovelution_2R3 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 5" bodyB="SG_lovelution_2R3 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2R3 6" bodyB="SG_lovelution_2R3 5"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 2" bodyB="SG_lovelution_2R4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 3" bodyB="SG_lovelution_2R4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 4" bodyB="SG_lovelution_2R4 3"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 5" bodyB="SG_lovelution_2R4 4"/>
+	 <generic-constraint bodyA="SG_lovelution_2R4 6" bodyB="SG_lovelution_2R4 5"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB1 2" bodyB="SG_lovelution_miniB1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB1 3" bodyB="SG_lovelution_miniB1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB2 2" bodyB="SG_lovelution_miniB2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB2 3" bodyB="SG_lovelution_miniB2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB3 2" bodyB="SG_lovelution_miniB3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB3 3" bodyB="SG_lovelution_miniB3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB4 2" bodyB="SG_lovelution_miniB4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB4 3" bodyB="SG_lovelution_miniB4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB5 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB5 2" bodyB="SG_lovelution_miniB5 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB5 3" bodyB="SG_lovelution_miniB5 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB6 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB6 2" bodyB="SG_lovelution_miniB6 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB6 3" bodyB="SG_lovelution_miniB6 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB7 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB7 2" bodyB="SG_lovelution_miniB7 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB7 3" bodyB="SG_lovelution_miniB7 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB8 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB8 2" bodyB="SG_lovelution_miniB8 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniB8 3" bodyB="SG_lovelution_miniB8 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF1 2" bodyB="SG_lovelution_miniF1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF1 3" bodyB="SG_lovelution_miniF1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF1 4" bodyB="SG_lovelution_miniF1 3"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF2 2" bodyB="SG_lovelution_miniF2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF2 3" bodyB="SG_lovelution_miniF2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF2 4" bodyB="SG_lovelution_miniF2 3"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF3 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF3 2" bodyB="SG_lovelution_miniF3 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF3 3" bodyB="SG_lovelution_miniF3 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF4 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF4 2" bodyB="SG_lovelution_miniF4 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF4 3" bodyB="SG_lovelution_miniF4 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF5 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF5 2" bodyB="SG_lovelution_miniF5 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF5 3" bodyB="SG_lovelution_miniF5 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF5 4" bodyB="SG_lovelution_miniF5 3"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF6 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF6 2" bodyB="SG_lovelution_miniF6 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF6 3" bodyB="SG_lovelution_miniF6 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniF6 4" bodyB="SG_lovelution_miniF6 3"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL1 2" bodyB="SG_lovelution_miniL1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL1 3" bodyB="SG_lovelution_miniL1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL2 2" bodyB="SG_lovelution_miniL2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniL2 3" bodyB="SG_lovelution_miniL2 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR1 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR1 2" bodyB="SG_lovelution_miniR1 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR1 3" bodyB="SG_lovelution_miniR1 2"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR2 1" bodyB="NPC Head [Head]"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR2 2" bodyB="SG_lovelution_miniR2 1"/>
+	 <generic-constraint bodyA="SG_lovelution_miniR2 3" bodyB="SG_lovelution_miniR2 2"/>
+
+
+
+ <generic-constraint-default>
+  <frameInLerp>
+    <translationLerp>0</translationLerp>
+    <rotationLerp>0</rotationLerp>
+  </frameInLerp>
+  <linearLowerLimit x="-0.3" y="-0.3" z="-0.3" />
+  <linearUpperLimit x="0.3" y="0.3" z="0.3" />
+  <angularLowerLimit x="-5" y="-5" z="-5" />
+  <angularUpperLimit x="5" y="5" z="5" />
+  <linearStiffness x="0" y="0" z="0" />
+  <angularStiffness x="0" y="0" z="0" />
+  <linearDamping x="0" y="0" z="0" />
+  <angularDamping x="0" y="0" z="0" />
+  <linearEquilibrium x="0" y="0" z="0" />
+  <angularEquilibrium x="0" y="0" z="0" />
+</generic-constraint-default>	
+
+<generic-constraint bodyA="SG_lovelution_miniF2 1" bodyB="SG_lovelution_miniF1 1" />
+<generic-constraint bodyA="SG_lovelution_miniF2 2" bodyB="SG_lovelution_miniF1 2" />
+<generic-constraint bodyA="SG_lovelution_miniF2 3" bodyB="SG_lovelution_miniF1 3" />
+<generic-constraint bodyA="SG_lovelution_miniF2 4" bodyB="SG_lovelution_miniF1 4" />
+<generic-constraint bodyA="SG_lovelution_miniF6 1" bodyB="SG_lovelution_miniF5 1" />
+<generic-constraint bodyA="SG_lovelution_miniF6 2" bodyB="SG_lovelution_miniF5 2" />
+<generic-constraint bodyA="SG_lovelution_miniF6 3" bodyB="SG_lovelution_miniF5 3" />
+<generic-constraint bodyA="SG_lovelution_miniF6 4" bodyB="SG_lovelution_miniF5 4" />
+
+
+
+<per-vertex-shape name="1LovelutionInv45">
+		<margin>0.01</margin>
+		<priority>1</priority>
+		<shared>Internal</shared>
+		<tag>XingHair</tag>
+		<no-collide-with-tag>XingHair</no-collide-with-tag>
+		<can-collide-with-tag>Xingch</can-collide-with-tag>
+		<can-collide-with-tag>Xingcb</can-collide-with-tag>
+		<can-collide-with-tag>ground</can-collide-with-tag>
+		<weight-threshold bone="NPC Head [Head]">0.1</weight-threshold>
+		<weight-threshold bone="NPC Spine2 [Spn2]">0.01</weight-threshold>
+
+	<weight-threshold bone="SG_lovelution_miniB1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB5 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB5 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB5 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB6 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB6 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB6 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB7 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB7 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB7 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB8 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB8 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniB8 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF1 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF2 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF5 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF5 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF5 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF5 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF6 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF6 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF6 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniF6 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniL2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_miniR2 3">0.3</weight-threshold>
+	 
+	 
+	</per-vertex-shape><!--Xing write SMPxml https://www.patreon.com/XingSkyrimSE -->	
+
+	
+
+<per-vertex-shape name="1LovelutionInv45_1">
+		<margin>0.01</margin>
+		<priority>1</priority>
+		<shared>Internal</shared>
+		<tag>XingHair</tag>
+		<no-collide-with-tag>XingHair</no-collide-with-tag>
+		<can-collide-with-tag>Xingch</can-collide-with-tag>
+		<can-collide-with-tag>Xingcb</can-collide-with-tag>
+		<can-collide-with-tag>ground</can-collide-with-tag>
+		<weight-threshold bone="NPC Head [Head]">0.1</weight-threshold>
+		<weight-threshold bone="NPC Spine2 [Spn2]">0.01</weight-threshold>
+
+	<weight-threshold bone="SG_lovelution_1R1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R1 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R1 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R1 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R2 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R3 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R4 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1R5 6">0.3</weight-threshold>
+
+	<weight-threshold bone="SG_lovelution_2R1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R1 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R1 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R1 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R2 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R3 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2R4 6">0.3</weight-threshold>
+	 
+	 
+	</per-vertex-shape><!--Xing write SMPxml https://www.patreon.com/XingSkyrimSE -->	
+
+
+
+
+<per-vertex-shape name="1LovelutionInv45_2">
+		<margin>0.01</margin>
+		<priority>1</priority>
+		<shared>Internal</shared>
+		<tag>XingHair</tag>
+		<no-collide-with-tag>XingHair</no-collide-with-tag>
+		<can-collide-with-tag>Xingch</can-collide-with-tag>
+		<can-collide-with-tag>Xingcb</can-collide-with-tag>
+		<can-collide-with-tag>ground</can-collide-with-tag>
+		<weight-threshold bone="NPC Head [Head]">0.1</weight-threshold>
+		<weight-threshold bone="NPC Spine2 [Spn2]">0.01</weight-threshold>
+		<weight-threshold bone="SG_lovelution_1L1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L1 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L1 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L1 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L2 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L3 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L4 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_1L5 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L1 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L2 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L3 6">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 1">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 2">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 3">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 4">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 5">0.3</weight-threshold>
+	<weight-threshold bone="SG_lovelution_2L4 6">0.3</weight-threshold>
+	</per-vertex-shape><!--Xing write SMPxml https://www.patreon.com/XingSkyrimSE -->	
+
+
+</system>
+
+
