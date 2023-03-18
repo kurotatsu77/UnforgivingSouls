@@ -2,6 +2,7 @@ Scriptname USLS_CustomSuit_RenderScript extends UD_CustomDevice_RenderScript
 
 import UnforgivingDevicesMain
 
+USLS_MCM Property USLSMCM auto
 Armor[] Property ListParts auto
 Keyword[] Property ListKeywords auto
 int Willpower = 0
@@ -23,6 +24,8 @@ Sound ChosenSound
 String[] Property TrialMessage auto
 GlobalVariable Property SuitVariable auto
 bool Property ConstantEffect = false auto
+Armor[] Property KindredSouls auto
+float Property KindredSoulsChance = 0.50 auto ; chance for some Kindred Soul to be applied instead of simple relock, 0.5 = 50%
 
 Function InitPost()
     UD_DeviceType = "Suit"
@@ -124,7 +127,25 @@ Function OnUpdatePost(float timePassed) ;called on update. Is only called if wea
             endif
             SuitVariable.SetValue(0)
             UnlockParts()
-            unlockRestrain()
+            if KindredSouls.Length > 0
+                KindredSoulsChance = USLSMCM.KindredSoulsChance
+                int loc_i
+                float loc_rnd
+                loc_rnd = Utility.RandomFloat(0,1)
+                if loc_rnd < KindredSoulsChance
+                    loc_i = Utility.RandomInt(1,KindredSouls.Length)
+                    if getWearer() == Game.GetPlayer()
+                        UDmain.Print("But suddenly another soul grabs your body!")
+                    else 
+                        UDmain.Print("But suddenly another soul grabs " + getWearer().GetName() + "'s body!")
+                    endif    
+                    libs.SwapDevices(getWearer(),KindredSouls[loc_i - 1], libs.zad_DeviousSuit, true)
+                else
+                    unlockRestrain()
+                endif
+            else
+                unlockRestrain()
+            endif
         endif
     endif
 EndFunction
