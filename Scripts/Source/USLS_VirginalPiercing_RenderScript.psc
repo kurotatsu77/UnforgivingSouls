@@ -1,6 +1,7 @@
 Scriptname USLS_VirginalPiercing_RenderScript extends UD_CustomVibratorBase_RenderScript  
 
 import UnforgivingDevicesMain
+USLS_MCM Property USLSMCM auto
 
 Armor[] Property USLS_Suits Auto
 
@@ -142,6 +143,7 @@ float Function getAccesibility()
 EndFunction
 
 Function OnVibrationStart()
+    UD_ArousalMult = USLSMCM.VibeMultiply
     if !getWearer().wornhaskeyword(libs.zad_deviousSuit) && TrialRunning == 0
         TrialRunning = 1
         if getWearer() == Game.GetPlayer()
