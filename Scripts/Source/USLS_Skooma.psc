@@ -22,7 +22,7 @@ Event OnEffectStart(Actor akTarget,Actor akCaster)
 
 
 
-SendFHUInflationEvent(Game.GetPlayer(),true,1,1.3,1,"")
+SendFHUInflationEvent(Game.GetPlayer(),true,1,1,1,"")
 
 akTarget.AddItem(Skooma,1,True)
 akTarget.EquipItem(Skooma,1,True)
