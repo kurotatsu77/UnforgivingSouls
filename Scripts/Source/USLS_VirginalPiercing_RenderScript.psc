@@ -16,6 +16,8 @@ EffectShader[] Property USLSShader auto
 EffectShader ChosenShader
 Sound ChosenSound
 
+Keyword Property CeleneSuit auto
+
 ;TextureSet Property USLSPiercingNormalTXST auto
 ;TextureSet Property USLSPiercingGlowTXST auto
 
@@ -299,6 +301,12 @@ Function ManifestBondage (Actor akActor)
     endif
 EndFunction
 
+Function activateDevice() ;Device custom activate effect. You need to create it yourself. Don't forget to remove parent.activateDevice() if you don't want parent effect
+    if !getWearer().wornhaskeyword(CeleneSuit)
+        parent.activateDevice()
+    endif
+EndFunction
+
 ;============================================================================================================================
 ;unused override function, theese are from base script. Extending different script means you also have to add their overrride functions                                                
 ;theese function should be on every object instance, as not having them may cause multiple function calls to default class
@@ -306,9 +314,6 @@ EndFunction
 ;============================================================================================================================
 Function safeCheck() ;called on init. Should be used to check if some properties are not filled, and fill them
     parent.safeCheck()
-EndFunction
-Function activateDevice() ;Device custom activate effect. You need to create it yourself. Don't forget to remove parent.activateDevice() if you don't want parent effect
-    parent.activateDevice()
 EndFunction
 bool Function canBeActivated() ;Switch. Used to determinate if device can be currently activated
     return parent.canBeActivated()
