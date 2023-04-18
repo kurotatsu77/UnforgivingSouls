@@ -6,9 +6,11 @@ bool Property PiercingRegistered auto
 LeveledItem Property zad_DeviousPiercingsVaginal auto
 Armor Property VirginalPiercing auto
 float Property KindredSoulsChance = 0.50 auto
+float Property SoundsVolume = 1.0 auto
 
 int VibeMultiplyMenu_S
 int KindredSoulsChance_S
+int SoundsVolume_S
 int PiercingRegistered_T
 String _lastPage
 
@@ -54,8 +56,11 @@ Event OnPageReset(string page)
 
 	if (page == "General" || page == "")
 		SetTitleText("General")
-				
-		AddHeaderOption("Virginal Piercing Tweaks")		
+		
+		AddHeaderOption("General")
+		SoundsVolume_S = AddSliderOption("Sounds Volume:", SoundsVolume, "{1} x")
+
+		AddHeaderOption("Virginal Piercing Tweaks")
 		VibeMultiplyMenu_S = AddSliderOption("Vibration power multiplier:", VibeMultiply, "{1} x")
 		KindredSoulsChance_S = AddSliderOption("Kindred Soul chance:", Round(KindredSoulsChance*100), "{0} %")
 
@@ -101,7 +106,12 @@ event OnOptionMenuAccept(int Menu, int a_index)
 EndEvent
 
 event OnOptionSliderOpen(int Menu)
-	if Menu == VibeMultiplyMenu_S
+	if Menu == SoundsVolume_S
+		SetSliderDialogStartValue(SoundsVolume)
+        SetSliderDialogDefaultValue(1.0)
+        SetSliderDialogRange(0.0, 1.0)
+        SetSliderDialogInterval(0.1)    
+	elseif Menu == VibeMultiplyMenu_S
 		SetSliderDialogStartValue(VibeMultiply)
         SetSliderDialogDefaultValue(1.0)
         SetSliderDialogRange(0.1, 10.0)
@@ -119,7 +129,10 @@ event OnOptionSliderOpen(int Menu)
 endEvent
 
 event OnOptionSliderAccept(int Menu, float value)
-    if (Menu == VibeMultiplyMenu_S)
+    if (Menu == SoundsVolume_S)
+        SoundsVolume = value
+        SetSliderOptionValue(SoundsVolume_S, SoundsVolume, "{1}")
+	elseif (Menu == VibeMultiplyMenu_S)
         VibeMultiply = value
         SetSliderOptionValue(VibeMultiplyMenu_S, VibeMultiply, "{1}")
 	elseif (Menu == KindredSoulsChance_S)
@@ -130,7 +143,9 @@ endEvent
 
 Event OnOptionHighlight(int option)
     if (_lastPage == "General")
-        if(option == VibeMultiplyMenu_S)
+        if(option == SoundsVolume_S)
+			SetInfoText("Sets volume level for all sounds played by this mod.")
+		elseif(option == VibeMultiplyMenu_S)
 			SetInfoText("Sets multiplier for vibration effectiveness of the Virginal Piercing. Affects edge game difficulty, default is 1, proven best with SL Aroused Redux.")
 		elseif(option == KindredSoulsChance_S)
 			SetInfoText("Sets chance of suit's kindred soul to take over in the event of the suit's trial completion.")

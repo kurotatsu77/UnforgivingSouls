@@ -1,5 +1,6 @@
 Scriptname USLS_KarmaSC extends Quest  
 
+USLS_MCM Property USLSMCM auto
 ReferenceAlias Property qAlias01 Auto
 Scene Property fgScene Auto
 int Property fgCooldown Auto
@@ -60,7 +61,8 @@ Event USLSKarma_HookOrgasmEnd(int tid, bool HasPlayer)
     sslThreadController Thread = SexLab.GetController(tid)
     Actor[] Positions = Thread.Positions
     ;Positions[1].Say(KarmaGoodbye)
-    KarmaGoodbyeSM.Play(Game.GetPlayer())
+    int loc_sound = KarmaGoodbyeSM.Play(Game.GetPlayer())
+    Sound.SetInstanceVolume(loc_sound, USLSMCM.SoundsVolume)
     Cleanup()
 EndEvent
 
@@ -71,7 +73,8 @@ Event USLSKarma_HookStageStart(int tid, bool HasPlayer)
     int loc_i
     loc_i = Utility.RandomInt(1,SexComments.length)
     ;Positions[1].Say(SexComments[loc_i - 1])
-    KarmaSuckingSM.Play(Game.GetPlayer())
+    int loc_sound = KarmaSuckingSM.Play(Game.GetPlayer())
+    Sound.SetInstanceVolume(loc_sound, USLSMCM.SoundsVolume)
 EndEvent
 
 Function Cleanup()

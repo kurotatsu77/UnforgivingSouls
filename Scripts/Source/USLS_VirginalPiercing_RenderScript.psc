@@ -161,6 +161,7 @@ Function OnVibrationStart()
         loc_i = Utility.RandomInt(1,CumForMe.length)
         loc_sound = CumForMe[loc_i - 1]
         CumSoundInstance = loc_sound.Play(getWearer())
+        Sound.SetInstanceVolume(CumSoundInstance, USLSMCM.SoundsVolume)
         loc_i = Utility.RandomInt(1,USLSShader.length)
         ChosenShader = USLSShader[loc_i - 1]
         ChosenShader.Play(getWearer())
