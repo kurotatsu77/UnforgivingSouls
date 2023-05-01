@@ -204,6 +204,7 @@ EndFunction
 Function OnOrgasmPost(bool sexlab = false) ;called on wearer orgasm. Is only called if OnOrgasmPre returns true. Is only called if wearer is registered
     ;parent.OnOrgasmPost(sexlab)
     if TrialRunning
+        libs.StopVibrating(getWearer())
         Sound.StopInstance(CumSoundInstance)
         ChosenShader.Stop(getWearer())
         TrialRunning = 0
