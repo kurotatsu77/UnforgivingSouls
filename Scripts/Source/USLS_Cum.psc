@@ -4,7 +4,7 @@ GlobalVariable Property USLS_Enemalevel auto
 
 Potion Property Skooma  Auto 
 
-imageSpaceModifier property dunSleepingTreeCampISMD auto
+EffectShader Property USLS_SkoomaES Auto
 
 Function SendFHUInflationEvent(form inflater, Bool Inflation, int poolmask, float amount, int time, string callback)
         Int handle = ModEvent.Create("SR_InflateEvent")
@@ -27,7 +27,7 @@ akTarget.AddItem(Skooma,1,True)
 akTarget.EquipItem(Skooma,1,True)
 
 if akTarget == game.GetPlayer()
-		dunSleepingTreeCampISMD.apply(1.0)
+		USLS_SkoomaES.Play(akTarget,120)
 	endif
 
 Utility.Wait(1)
@@ -35,7 +35,7 @@ Utility.Wait(1)
 USLS_Enemalevel.SetValue(USLS_Enemalevel.GetValue() + 1)
 
 If USLS_Enemalevel.GetValue ()   == 1  
-Debug.MessageBox("You feel the anal plug start to twitch then suddenly it shoots something deep inside you. It feels warm and sticky, then just like your pussy your arse starts to burn and your head feels like its split in two")
+Debug.MessageBox("You feel the anal plug start to twitch then suddenly it shoots something deep inside you. The incredible need to fuck your pussy manifests itself as images swirling through your head")
    ElseIf USLS_Enemalevel.GetValue ()   == 2  
 Debug.MessageBox("Still full from the last time the plug squirts another load of the hot subtance up your arse")
   ElseIf USLS_Enemalevel.GetValue ()  == 3
