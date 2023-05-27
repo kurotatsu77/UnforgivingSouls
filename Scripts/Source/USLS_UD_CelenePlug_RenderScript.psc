@@ -2,85 +2,6 @@ Scriptname USLS_UD_CelenePlug_RenderScript extends UD_CustomPlug_RenderScript
 
 import UnforgivingDevicesMain
 
-Function InitPost()
-    parent.InitPost()
-EndFunction
-
-Function safeCheck()
-    parent.safeCheck()
-EndFunction
-
-Function patchDevice()
-    UDCDmain.UDPatcher.patchPlug(self)
-EndFunction
-
-Function onDeviceMenuInitPost(bool[] aControlFilter)
-    parent.onDeviceMenuInitPost(aControlFilter)
-    ;UDCDmain.currentDeviceMenu_allowcutting = false
-EndFunction
-
-Function onDeviceMenuInitPostWH(bool[] aControlFilter)
-    parent.onDeviceMenuInitPostWH(aControlFilter)
-EndFunction
-
-bool Function struggleMinigame(int type = -1, Bool abSilent = False)
-    return parent.struggleMiniGame(type, abSilent)
-EndFunction
-
-bool Function struggleMinigameWH(Actor akSource)
-    return parent.struggleMiniGameWH(akSource)
-EndFunction
-
-float Function getAccesibility()
-   return parent.getAccesibility()
-EndFunction
-
-;returns plug type
-;0 -> Vaginal plug
-;1 -> Anal plug
-;2 -> Multi plug (Vaginal + Anal)
-int Function getPlugType()
-    return parent.getPlugType()
-EndFunction
-
-
-
-bool forceOutPlugMinigame_on = false
-bool Function forceOutPlugMinigame(Bool abSilent = False)
-   return parent.forceOutPlugMinigame(abSilent)
-EndFunction
-
-Bool Function forceOutPlugMinigameWH(Actor akHelper,Bool abSilent = False)
-    return parent.forceOutPlugMiniGameWH(akHelper, abSilent)
-EndFunction
-
-Function updateWidget(bool force = false)
-    parent.updateWidget(force)
-EndFunction
-
-Function onSpecialButtonPressed(float fMult)
-    
-    parent.onSpecialButtonPressed(fMult)
-EndFunction
-
-Function OnCritDevicePost()
-    
-    parent.OnCritDevicePost()
-EndFunction
-
-bool Function Details_CanShowResist()
-    return parent.Details_CanShowResist()
-EndFunction 
-
-bool Function Details_CanShowHitResist()
-    return parent.Details_CanShowHitResist()
-EndFunction 
-
-Function OnMinigameTick1() ;called every 1s of minigame
-  
-    parent.OnMinigameTick1()
-EndFunction
-
 ;======================================================================
 ;Place new override functions here, do not forget to check override functions in parent if its not base script (UD_CustomDevice_RenderScript)
 ;======================================================================
@@ -92,12 +13,12 @@ Function OnVibrationEnd()
     game.GetPlayer().removefromFaction(libs.zadVibratorFaction)
     parent.OnVibrationEnd()
 EndFunction
-float Function getVibOrgasmRate(float afMult = 1.0)
-    return parent.getVibOrgasmRate(afMult)
-EndFunction
-float Function getVibArousalRate(float afMult = 1.0)
-    return parent.getVibArousalRate(afMult)
-EndFunction
+;float Function getVibOrgasmRate(float afMult = 1.0)
+;    return parent.getVibOrgasmRate(afMult)
+;EndFunction
+;float Function getVibArousalRate(float afMult = 1.0)
+;    return parent.getVibArousalRate(afMult)
+;EndFunction
 ;============================================================================================================================
 ;unused override function, theese are from base script. Extending different script means you also have to add their overrride functions                                                
 ;theese function should be on every object instance, as not having them may cause multiple function calls to default class
@@ -232,3 +153,78 @@ EndFunction
 Float[] Function GetCurrentMinigameExpression()
 	return parent.GetCurrentMinigameExpression()
 EndFunction
+;Function InitPost()
+;    parent.InitPost()
+;EndFunction
+
+;Function safeCheck()
+;    parent.safeCheck()
+;EndFunction
+
+;Function patchDevice()
+;    UDCDmain.UDPatcher.patchPlug(self)
+;EndFunction
+
+;Function onDeviceMenuInitPost(bool[] aControlFilter)
+;    parent.onDeviceMenuInitPost(aControlFilter)
+    ;UDCDmain.currentDeviceMenu_allowcutting = false
+;EndFunction
+
+;Function onDeviceMenuInitPostWH(bool[] aControlFilter)
+;    parent.onDeviceMenuInitPostWH(aControlFilter)
+;EndFunction
+
+;bool Function struggleMinigame(int type = -1, Bool abSilent = False)
+;    return parent.struggleMiniGame(type, abSilent)
+;EndFunction
+
+;bool Function struggleMinigameWH(Actor akSource)
+;    return parent.struggleMiniGameWH(akSource)
+;EndFunction
+
+;float Function getAccesibility()
+;   return parent.getAccesibility()
+;EndFunction
+
+;returns plug type
+;0 -> Vaginal plug
+;1 -> Anal plug
+;2 -> Multi plug (Vaginal + Anal)
+;int Function getPlugType()
+;    return parent.getPlugType()
+;EndFunction
+
+;bool forceOutPlugMinigame_on = false
+
+;bool Function forceOutPlugMinigame(Bool abSilent = False)
+;   return parent.forceOutPlugMinigame(abSilent)
+;EndFunction
+
+;Bool Function forceOutPlugMinigameWH(Actor akHelper,Bool abSilent = False)
+;    return parent.forceOutPlugMiniGameWH(akHelper, abSilent)
+;EndFunction
+
+;Function updateWidget(bool force = false)
+;    parent.updateWidget(force)
+;EndFunction
+
+;Function onSpecialButtonPressed(float fMult)
+;    parent.onSpecialButtonPressed(fMult)
+;EndFunction
+
+;Function OnCritDevicePost()
+;    parent.OnCritDevicePost()
+;EndFunction
+
+;bool Function Details_CanShowResist()
+;    return parent.Details_CanShowResist()
+;EndFunction 
+
+;bool Function Details_CanShowHitResist()
+;    return parent.Details_CanShowHitResist()
+;EndFunction 
+
+;Function OnMinigameTick1() ;called every 1s of minigame
+;    parent.OnMinigameTick1()
+;EndFunction
+
